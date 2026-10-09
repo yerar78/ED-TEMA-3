@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gerardosystems.estructuradedatos.controller.MainController"
+      alignment="CENTER"
+      spacing="15"
+      prefWidth="900"
+      prefHeight="600">
+
+    <padding>
+        <Insets top="25"
+                right="25"
+                bottom="25"
+                left="25"/>
+    </padding>
+
+    <!-- =============================== -->
+    <!-- MENÚ PRINCIPAL                  -->
+    <!-- =============================== -->
+
+    <VBox fx:id="mainMenu"
+          alignment="CENTER"
+          spacing="15">
+
+        <Label text="ESTRUCTURAS DE DATOS"
+               style="-fx-font-size: 28px;
+                      -fx-font-weight: bold;"/>
+
+        <Label text="Pilas, Colas y Listas"
+               style="-fx-font-size: 18px;"/>
+
+        <Button text="PILA (STACK)"
+                prefWidth="300"
+                prefHeight="50"
+                onAction="#showStack"/>
+
+        <Button text="COLA (QUEUE)"
+                prefWidth="300"
+                prefHeight="50"
+                onAction="#showQueue"/>
+
+        <Button text="LISTA"
+                prefWidth="300"
+                prefHeight="50"
+                onAction="#showList"/>
+
+    </VBox>
+
+
+    <!-- =============================== -->
+    <!-- PANEL DE ESTRUCTURA              -->
+    <!-- =============================== -->
+
+    <VBox fx:id="structurePanel"
+          alignment="CENTER"
+          spacing="12"
+          visible="false"
+          managed="false">
+
+        <Label fx:id="titleLabel"
+               text="ESTRUCTURA"
+               style="-fx-font-size: 26px;
+                      -fx-font-weight: bold;"/>
+
+        <Label fx:id="descriptionLabel"
+               wrapText="true"
+               style="-fx-font-size: 14px;"/>
+
+        <!-- LIST VIEW -->
+
+        <ListView fx:id="listView"
+                  prefWidth="600"
+                  prefHeight="280"/>
+
+        <!-- CAMPO DE TEXTO -->
+
+        <TextField fx:id="inputField"
+                   prefWidth="350"
+                   promptText="Ingrese un elemento"/>
+
+        <!-- BOTONES -->
+
+        <HBox alignment="CENTER"
+              spacing="10">
+
+            <Button fx:id="addButton"
+                    text="Agregar"
+                    prefWidth="120"
+                    onAction="#addElement"/>
+
+            <Button fx:id="removeButton"
+                    text="Eliminar"
+                    prefWidth="120"
+                    onAction="#removeElement"/>
+
+            <Button text="Vaciar"
+                    prefWidth="120"
+                    onAction="#clearStructure"/>
+
+        </HBox>
+
+        <Button text="← Regresar al menú"
+                prefWidth="200"
+                onAction="#backToMenu"/>
+
+    </VBox>
+
+</VBox>
